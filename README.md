@@ -36,9 +36,9 @@ Android 8.0 (API 26) or newer on both phones. Nothing else to install on the com
 
 ## Install
 
-The APK is built by GitHub Actions and is not on Google Play. Open the **Actions** tab, pick the newest successful **build** run, and download the `kcast-apk` artifact (a zip holding `app-debug.apk`). Install it on both phones; Android will ask you to allow installing from your browser or file manager.
+Download `kcast-v0.1.0.apk` from the [Releases page](https://github.com/karim-kamel-dev/k-cast/releases) and open it on both phones. Android will ask you to allow installing from your browser or file manager. The APK is not on Google Play.
 
-The APK is signed with a key kept in this repository's Actions secrets, so a new build installs over the previous version.
+The APK is signed with a key kept in this repository's Actions secrets, so a new build installs over the previous version. The `kcast-apk` artifact in the **Actions** tab is the same app, for anyone who prefers building it there.
 
 ## Build
 
