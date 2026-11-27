@@ -58,4 +58,4 @@ Known limits: no audio; both phones must be on a network that lets them reach ea
 
 ## License
 
-No license has been chosen yet, so all rights are reserved for now.
+This project is licensed under the [MIT License](LICENSE).
