@@ -6,7 +6,7 @@ on:
     branches: [main]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -32,3 +32,17 @@ jobs:
         with:
           name: kcast-apk
           path: app/build/outputs/apk/debug/app-debug.apk
+      - name: Publish release
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag=v0.1.0
+          cp app/build/outputs/apk/debug/app-debug.apk "kcast-$tag.apk"
+          if gh release view "$tag" >/dev/null 2>&1; then
+            gh release upload "$tag" "kcast-$tag.apk" --clobber
+          else
+            gh release create "$tag" "kcast-$tag.apk" \
+              --title "k cast 0.1.0" \
+              --notes "First public build of k cast: show one Android phone's screen on another phone over Wi-Fi. Install this APK on both phones (Android 8.0 or newer). It is signed with a key kept in this repository's Actions secrets, so later builds install over it."
+          fi
