@@ -1,0 +1,19 @@
+# Gradle
+.gradle/
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Android Studio / IntelliJ
+*.iml
+.idea/
+local.properties
+
+# Keystores and secrets
+*.jks
+*.keystore
+keystore.properties
+
+# OS
+.DS_Store
